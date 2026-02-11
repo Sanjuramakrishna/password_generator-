@@ -1,0 +1,4 @@
+CREATE TABLE passwords (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    password TEXT NOT NULL
+);

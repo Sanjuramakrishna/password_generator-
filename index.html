@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="box">
+    <h2>Password Generator</h2>
+    <input type="text" id="password" readonly>
+    <button onclick="generate()">Generate</button>
+</div>
+
+<script>
+function generate() {
+    fetch("/generate-password")
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById("password").value = data.password;
+        });
+}
+</script>
+
+</body>
+</html>
